@@ -1,9 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://bqbx2lqe5ty2x"]
+[gd_scene load_steps=4 format=3 uid="uid://bqbx2lqe5ty2x"]
 
 [ext_resource type="PackedScene" uid="uid://b2a0asnme5b41" path="res://Scenes/player.tscn" id="1_h6a26"]
+[ext_resource type="Script" path="res://Scenes/main.gd" id="1_n3y6x"]
 [ext_resource type="Texture2D" uid="uid://7s8eb26utot4" path="res://Assets/bg.jpg" id="1_o6kpo"]
 
 [node name="Main" type="Node2D"]
+script = ExtResource("1_n3y6x")
 
 [node name="Bg" type="Sprite2D" parent="."]
 position = Vector2(573.707, 186)
@@ -23,3 +25,33 @@ region_rect = Rect2(-1.1119, 0, 1000.93, 326.662)
 position = Vector2(228, 439)
 
 [node name="bg" type="Node" parent="."]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Button" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 883.0
+offset_top = 60.0
+offset_right = 1142.0
+offset_bottom = 204.0
+text = "Right
+"
+
+[node name="Button2" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 869.0
+offset_top = 241.0
+offset_right = 1128.0
+offset_bottom = 385.0
+text = "Left"
+
+[connection signal="go_down" from="Player" to="Player" method="_on_go_down"]
+[connection signal="go_left" from="Player" to="Player" method="_on_go_left"]
+[connection signal="go_right" from="Player" to="Player" method="_on_go_right"]
+[connection signal="go_up" from="Player" to="Player" method="_on_go_up"]
+[connection signal="pressed" from="Control/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Control/Button2" to="." method="_on_button_2_pressed"]
