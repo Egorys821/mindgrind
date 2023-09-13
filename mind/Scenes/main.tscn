@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://bqbx2lqe5ty2x"]
+
+[ext_resource type="PackedScene" uid="uid://b2a0asnme5b41" path="res://Scenes/player.tscn" id="1_h6a26"]
+[ext_resource type="Texture2D" uid="uid://7s8eb26utot4" path="res://Assets/bg.jpg" id="1_o6kpo"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Bg" type="Sprite2D" parent="."]
+position = Vector2(573.707, 186)
+scale = Vector2(1.15059, 1.14417)
+texture = ExtResource("1_o6kpo")
+region_enabled = true
+region_rect = Rect2(-1.1119, 0, 1000.93, 326.662)
+
+[node name="Bg2" type="Sprite2D" parent="."]
+position = Vector2(574.207, 560)
+scale = Vector2(1.15159, 1.14417)
+texture = ExtResource("1_o6kpo")
+region_enabled = true
+region_rect = Rect2(-1.1119, 0, 1000.93, 326.662)
+
+[node name="Player" parent="." instance=ExtResource("1_h6a26")]
+position = Vector2(228, 439)
+
+[node name="bg" type="Node" parent="."]
